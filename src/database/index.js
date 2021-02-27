@@ -1,8 +1,15 @@
 import mongoose from "mongoose";
 
-import { mongo } from "../config/database";
+import databaseConfig from "../config/database";
 class Database {
+  constructor() {
+    this.mongo();
+  }
   mongo() {
-    mongoose.connect(mongo.hosts, mongo.config);
+    mongoose.connect(databaseConfig.mongo.hosts, databaseConfig.mongo.config);
+    mongoose.connection.on("connected", () => {
+      console.log("[MONGODB] Connection sucessfuly stablished");
+    });
   }
 }
+export default new Database();

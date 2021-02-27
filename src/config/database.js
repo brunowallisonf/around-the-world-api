@@ -1,6 +1,8 @@
+require("dotenv/config");
+
 export default {
   mongo: {
-    hosts: process.env.MONGO_CONNECTION,
+    hosts: process.env.MONGODB_CONNECTION,
     config: {
       useCreateIndex: true,
       useNewUrlParser: true,
