@@ -12,6 +12,7 @@ class App {
 
   loadMiddlewares() {
     this.server.use(cors());
+    this.server.use(express.json());
   }
 
   loadRoutes() {
