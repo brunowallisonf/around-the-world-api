@@ -30,6 +30,7 @@ const postSchema = mongoose.Schema({
   date: {
     type: Date,
   },
+  postType: String,
 });
 
 export default mongoose.model("post", postSchema);
