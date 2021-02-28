@@ -47,7 +47,6 @@ class PostsRetriever {
         ],
         postType: "site",
       };
-
       if (postBasicInformation.link.includes(TWITTER_URL)) {
         const twitterApiInfo = await processTwitterPost(postBasicInformation);
         return {
