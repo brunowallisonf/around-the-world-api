@@ -21,6 +21,15 @@ class PostsRetriever {
     ).filter(
       (post) => !!post && !post.media[0].isVideo && !post.media[0].isGif
     );
+
+    parsedItems.map(async (item) => {
+      const postExists = await Post.findOne({ link: item.link });
+      if (postExists) {
+        console.warn("[SYNC] ignoring posts already exists");
+        return;
+      }
+      await Post.create(item);
+    });
   }
 
   async processFeedItem(item) {
