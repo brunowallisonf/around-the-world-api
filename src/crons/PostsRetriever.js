@@ -45,7 +45,7 @@ class PostsRetriever {
             isVideo: false,
           },
         ],
-        postType: "twitter",
+        postType: "site",
       };
 
       if (postBasicInformation.link.includes(TWITTER_URL)) {
