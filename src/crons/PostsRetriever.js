@@ -50,7 +50,6 @@ class PostsRetriever {
 
       if (postBasicInformation.link.includes(TWITTER_URL)) {
         const twitterApiInfo = await processTwitterPost(postBasicInformation);
-
         return {
           ...postBasicInformation,
           ...twitterApiInfo,
