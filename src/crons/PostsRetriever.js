@@ -45,12 +45,17 @@ class PostsRetriever {
             isVideo: false,
           },
         ],
+        postType: "twitter",
       };
 
       if (postBasicInformation.link.includes(TWITTER_URL)) {
         const twitterApiInfo = await processTwitterPost(postBasicInformation);
 
-        return { ...postBasicInformation, ...twitterApiInfo };
+        return {
+          ...postBasicInformation,
+          ...twitterApiInfo,
+          postType: "twitter",
+        };
       }
 
       return postBasicInformation;
